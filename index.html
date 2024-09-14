@@ -1,189 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Moshiur Rahman - Creative Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .floating { animation: float 6s ease-in-out infinite; }
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-        }
-        .twinkle { animation: twinkle 3s infinite; }
-        .shooting-star {
-            position: absolute;
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-            animation: shoot 3s linear infinite;
-            opacity: 0;
-        }
-        @keyframes shoot {
-            0% { transform: translateX(-100px) translateY(0); opacity: 1; }
-            100% { transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)); opacity: 0; }
-        }
-        .glow { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
-        .neon-border { box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Md Moshiur Rahman - Innovative Developer Portfolio</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap');
+
+		body {
+			font-family: 'Exo 2', sans-serif;
+			background-color: #0a0a0a;
+			color: #ffffff;
+			overflow-x: hidden;
+		}
+
+		.gradient-text {
+			background: linear-gradient(45deg, #00ff00, #0099ff);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+		}
+
+		.card {
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(10px);
+			border-radius: 20px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+		}
+
+		.card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 10px 20px rgba(0, 255, 0, 0.2);
+		}
+
+		#ben10-watch {
+			width: 100px;
+			height: 100px;
+			background: url('https://i.imgur.com/QwzOnyG.png') no-repeat center center;
+			background-size: contain;
+			animation: spin 10s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.skill-bar {
+			height: 10px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		.skill-progress {
+			height: 100%;
+			background: linear-gradient(90deg, #00ff00, #0099ff);
+			border-radius: 5px;
+			transition: width 1s ease-in-out;
+		}
+	</style>
 </head>
-<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
-    <div id="stars"></div>
-    <div id="shooting-stars"></div>
 
-    <header class="py-6 relative z-10">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-2 glow floating">Md Moshiur Rahman</h1>
-            <p class="text-xl mt-2 text-blue-300">Crafting Digital Experiences Through Code</p>
-        </div>
-    </header>
+<body class="bg-black text-white">
+	<nav class="fixed w-full z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg">
+		<div class="container mx-auto px-6 py-3">
+			<div class="flex justify-between items-center">
+				<a href="#" class="text-2xl font-bold gradient-text">MR</a>
+				<div id="ben10-watch"></div>
+				<div class="hidden md:flex space-x-6">
+					<a href="#experience" class="hover:text-green-400 transition duration-300">Experience</a>
+					<a href="#skills" class="hover:text-green-400 transition duration-300">Skills</a>
+					<a href="#projects" class="hover:text-green-400 transition duration-300">Projects</a>
+					<a href="#interests" class="hover:text-green-400 transition duration-300">Interests</a>
+				</div>
+			</div>
+		</div>
+	</nav>
 
-    <nav class="bg-opacity-30 bg-blue-900 backdrop-blur-md py-4 sticky top-0 z-20">
-        <div class="container mx-auto px-4 flex justify-center space-x-6">
-            <a href="#experience" class="hover:text-blue-300 transition duration-300">Experience</a>
-            <a href="#skills" class="hover:text-blue-300 transition duration-300">Skills</a>
-            <a href="#projects" class="hover:text-blue-300 transition duration-300">Projects</a>
-            <a href="#interests" class="hover:text-blue-300 transition duration-300">Interests</a>
-        </div>
-    </nav>
+	<header class="h-screen flex items-center justify-center text-center">
+		<div>
+			<h1 class="text-6xl font-bold mb-4 gradient-text">Md Moshiur Rahman</h1>
+			<p class="text-xl mb-8">Crafting Digital Experiences Through Code</p>
+			<a href="#contact"
+				class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-blue-600 transition duration-300">Get
+				in Touch</a>
+		</div>
+	</header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section id="experience" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 glow">Stellar Experience</h2>
-            
-            <div class="bg-opacity-10 bg-white rounded-lg p-6 mb-6 backdrop-blur-md neon-border">
-                <h3 class="text-2xl font-semibold text-blue-300">Software Engineer </h3>
-                <p class="text-gray-300">NeuroLeap Corp • 2022 - Present</p>
-                <p class="mt-2"> Software Engineering/Development, related to AI/ML, for various screening, assessment</p>
-            </div>
+	<main class="container mx-auto px-6 py-16">
+		<section id="experience" class="mb-20">
+			<h2 class="text-4xl font-bold mb-8 gradient-text">Experience</h2>
+			<div class="grid grid-cols-1 gap-6">
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold text-green-400">Software Engineer</h3>
+					<p class="text-gray-300">NeuroLeap Corp • 2022 - Present</p>
+					<p class="mt-2 text-gray-200">Software Engineering/Development, related to AI/ML, for various
+						screening, assessment.</p>
+				</div>
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold text-green-400">Coding Instructor</h3>
+					<p class="text-gray-300">Dreamers Academy • September 2023 - Present</p>
+					<ul class="list-disc list-inside mt-2 text-gray-200">
+						<li>Igniting young minds with the magic of code</li>
+						<li>Crafting engaging online learning experiences</li>
+						<li>Mentoring future tech innovators</li>
+					</ul>
+				</div>
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold text-green-400">Java and Python Guru</h3>
+					<p class="text-gray-300">eShikhon • February 2021 - August 2023</p>
+					<ul class="list-disc list-inside mt-2 text-gray-200">
+						<li>Empowering professionals with coding superpowers</li>
+						<li>Architecting robust web applications</li>
+						<li>Demystifying complex programming concepts</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-            <div class="bg-opacity-10 bg-white rounded-lg p-6 mb-6 backdrop-blur-md neon-border">
-                <h3 class="text-2xl font-semibold text-blue-300">Coding Instructor</h3>
-                <p class="text-gray-300">Dreamers Academy • September 2023 - Present</p>
-                <ul class="list-disc list-inside mt-2 text-gray-200">
-                    <li>Igniting young minds with the magic of code</li>
-                    <li>Crafting engaging online learning experiences</li>
-                    <li>Mentoring future tech innovators</li>
-                </ul>
-            </div>
+		<section id="skills" class="mb-20">
+			<h2 class="text-4xl font-bold mb-8 gradient-text">Skills</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold mb-4 text-green-400">Programming Languages</h3>
+					<div class="space-y-4">
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Python</span>
+								<span>90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 90%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Java</span>
+								<span>85%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 85%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>C++</span>
+								<span>80%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 80%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold mb-4 text-green-400">Libraries & Frameworks</h3>
+					<p class="text-gray-200">Keras • NumPy • Sci-kit learn • SciPy • Pandas • OpenCV • Streamlit •
+						BeautifulSoup • Django • JavaFX</p>
+				</div>
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold mb-4 text-green-400">Tools & Platforms</h3>
+					<p class="text-gray-200">Git • GitHub • Heroku • Digital Ocean • AWS • Azure • Firebase • Storybook
+					</p>
+				</div>
+			</div>
+		</section>
 
-            <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                <h3 class="text-2xl font-semibold text-blue-300">Java and Python Guru</h3>
-                <p class="text-gray-300">eShikhon • February 2021 - August 2023</p>
-                <ul class="list-disc list-inside mt-2 text-gray-200">
-                    <li>Empowering professionals with coding superpowers</li>
-                    <li>Architecting robust web applications</li>
-                    <li>Demystifying complex programming concepts</li>
-                </ul>
-            </div>
-        </section>
+		<section id="projects" class="mb-20">
+			<h2 class="text-4xl font-bold mb-8 gradient-text">Projects</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold mb-2 text-green-400">Binary Beats Web Editor</h3>
+					<p class="text-gray-200">An immersive coding sanctuary where developers of all levels can craft
+						their digital symphonies.</p>
+				</div>
+				<div class="card p-6">
+					<h3 class="text-2xl font-semibold mb-2 text-green-400">CodeSage Portal</h3>
+					<p class="text-gray-200">A mystical gateway to knowledge, where students embark on coding quests and
+						showcase their arcane creations.</p>
+				</div>
+			</div>
+		</section>
 
-        <section id="skills" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 glow">Cosmic Skill Set</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-300">Programming Languages</h3>
-                    <p class="text-gray-200">Python • Java • C++</p>
-                </div>
-                <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-300">Libraries & Frameworks</h3>
-                    <p class="text-gray-200">Keras • NumPy • Sci-kit learn • SciPy • Pandas • OpenCV • Streamlit • Beautifulsoup • Django • JavaFX</p>
-                </div>
-                <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-300">Tools & Platforms</h3>
-                    <p class="text-gray-200">Git • GitHub • Heroku • Digital Ocean • AWS • Azure • Firebase • Storybook</p>
-                </div>
-            </div>
-        </section>
+		<section id="interests" class="mb-20">
+			<h2 class="text-4xl font-bold mb-8 gradient-text">Interests</h2>
+			<div class="card p-6 text-center">
+				<p class="text-gray-200">Weaving words into poetry • Mastering the art of cricket • Exploring vast
+					universes in science fiction • Decoding the language of cinema</p>
+			</div>
+		</section>
+	</main>
 
-        <section id="projects" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 glow">Galactic Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-300">Binary Beats Web Editor</h3>
-                    <p class="text-gray-200">An immersive coding sanctuary where developers of all levels can craft their digital symphonies.</p>
-                </div>
-                <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-300">CodeSage Portal</h3>
-                    <p class="text-gray-200">A mystical gateway to knowledge, where students embark on coding quests and showcase their arcane creations.</p>
-                </div>
-            </div>
-        </section>
+	<footer class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg py-8">
+		<div class="container mx-auto px-6 text-center">
+			<div class="flex justify-center space-x-6 mb-4">
+				<a href="mailto:mhridoy.me@gmail.com"
+					class="text-gray-400 hover:text-green-400 transition duration-300">
+					<i class="fas fa-envelope fa-2x"></i>
+				</a>
+				<a href="tel:+8801752175087" class="text-gray-400 hover:text-green-400 transition duration-300">
+					<i class="fas fa-phone fa-2x"></i>
+				</a>
+				<a href="https://github.com/mhridoy" target="_blank" rel="noopener noreferrer"
+					class="text-gray-400 hover:text-green-400 transition duration-300">
+					<i class="fab fa-github fa-2x"></i>
+				</a>
+				<a href="https://moshiurrahman.page" target="_blank" rel="noopener noreferrer"
+					class="text-gray-400 hover:text-green-400 transition duration-300">
+					<i class="fas fa-globe fa-2x"></i>
+				</a>
+			</div>
+			<p class="text-gray-400">&copy; 2024 Md Moshiur Rahman. All rights reserved.</p>
+		</div>
+	</footer>
 
-        <section id="interests" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 glow">Nebulae of Interests</h2>
-            <div class="bg-opacity-10 bg-white rounded-lg p-6 backdrop-blur-md neon-border">
-                <p class="text-gray-200">Weaving words into poetry • Mastering the art of cricket • Exploring vast universes in science fiction • Decoding the language of cinema</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-opacity-30 bg-blue-900 backdrop-blur-md py-6">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="mailto:mhridoy.me@gmail.com" class="hover:text-blue-300 transition duration-300">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+8801752175087" class="hover:text-blue-300 transition duration-300">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://github.com/mhridoy" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition duration-300">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://moshiurrahman.page" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition duration-300">
-                    <i class="fas fa-globe"></i>
-                </a>
-            </div>
-            <p class="text-blue-200">&copy; 2024 Md Moshiur Rahman. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = `${Math.random() * 100}vw`;
-                star.style.top = `${Math.random() * 100}vh`;
-                if (Math.random() > 0.5) {
-                    star.classList.add('twinkle');
-                }
-                starsContainer.appendChild(star);
-            }
-        }
-
-        function createShootingStars() {
-            const shootingStarsContainer = document.getElementById('shooting-stars');
-            setInterval(() => {
-                const star = document.createElement('div');
-                star.className = 'shooting-star';
-                star.style.left = `${Math.random() * 100}vw`;
-                star.style.top = `${Math.random() * 100}vh`;
-                star.style.transform = `rotate(${Math.random() * 180}deg)`;
-                shootingStarsContainer.appendChild(star);
+	<script>
+		// Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const animateBar = (bar) => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
                 setTimeout(() => {
-                    star.remove();
-                }, 3000);
-            }, 5000);
+                    bar.style.width = width;
+                }, 100);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateBar(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => observer.observe(bar));
         }
 
-        createStars();
-        createShootingStars();
-    </script>
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateSkillBars();
+        });
+	</script>
 </body>
+
 </html>
